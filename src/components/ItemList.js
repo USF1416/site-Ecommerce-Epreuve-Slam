@@ -24,7 +24,7 @@ const ItemList = () => {
                 <li key={item.id} className="product">
                     <img src={item.image} alt={item.nom} />
                     <h3>{item.nom}</h3>
-                    <p>{item.prix}</p>
+                    <p>{item.prix}€</p>
                     <p>{item.description}</p>
                     <button onClick={() => deleteItem(item.id)}>Delete</button>
                 </li>

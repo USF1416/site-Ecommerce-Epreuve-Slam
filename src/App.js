@@ -1,53 +1,45 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import ItemList from './components/ItemList';
+import Panier from './components/Panier';
 import './App.css';
 
 function App() {
     return (
-        <div className="App">
-            {/* Header Section */}
-            <header className="header">
-                <div className="container">
-                    <h1 className="logo">MyShop</h1>
-                    <nav>
-                        <ul className="nav-links">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#products">Products</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </nav>
-                    <div className="cart">
-                        <a href="#cart">🛒 Cart (0)</a>
+        <Router>
+            <div className="App">
+                {/* Header Section */}
+                <header className="header">
+                    <div className="">
+                        <nav>
+                            <h1 className="logo">MyShop</h1>
+                            <button className=""><Link to="/">Home</Link></button>
+                            <button className=""><Link to="/ItemList">Produits</Link></button>
+                            <button className=""><Link to="/Panier">Panier</Link></button>
+                        </nav>
                     </div>
-                </div>
-            </header>
+                </header>
 
-            {/* Hero Section */}
-            <section className="hero">
-                <div className="container">
-                    <h2>Welcome to MyShop</h2>
-                    <p>Your one-stop shop for the best products!</p>
-                    <a href="#products" className="btn">Shop Now</a>
-                </div>
-            </section>
-
-            {/* Products Section */}
-            <section id="products" className="products">
-                <div className="container">
-                    <h2>Our Products</h2>
-                    <div className="product-grid">
-                        <ItemList/>
+                {/* Main Section */}
+                <main className='main'>
+                    <div>
+                        <Routes>
+                            <Route path="/" element={''}/>
+                            <Route path="/ItemList" element={<ItemList />} />
+                            <Route path="/Panier" element={<Panier />} />
+                        </Routes>
                     </div>
-                </div>
-            </section>
+                </main>
 
-            {/* Footer Section */}
-            <footer className="footer">
-                <div className="container">
-                    <p>&copy; 2025 MyShop. All rights reserved.</p>
-                </div>
-            </footer>
-        </div>
+                {/* Footer Section */}
+                <footer className="footer">
+                    <div className="">
+                        <p>© 2025 My Shop. Tous droits réservés.</p>
+                    </div>
+                </footer>
+            </div>
+        </Router>
+        
     );
 }
 

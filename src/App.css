@@ -1,5 +1,8 @@
 /* App.css */
-
+* {
+  text-decoration: none;
+  list-style: none;
+}
 /* General Reset */
 body, html {
   margin: 0;
@@ -87,9 +90,8 @@ body, html {
   margin-bottom: 30px;
 }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.product-grid ul {
+  display: flex;
   gap: 20px;
 }
 
